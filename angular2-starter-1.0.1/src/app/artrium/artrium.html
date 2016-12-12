@@ -1,0 +1,39 @@
+<style>
+  .btn{
+    float:right;
+  }
+
+  input[type="file"] {
+      display: none;
+  }
+  .input-file {
+      border: 1px solid #ccc;
+      display: inline-block;
+      padding: 6px 12px;
+      cursor: pointer;
+  }
+
+
+</style>
+<div class = "container">
+  <div class="row">
+    <div class="panel panel-default">
+                  <div class="panel-heading clearfix">
+                     <h3 class="panel-title pull-left">Gallery</h3>
+                     <span flex></span>
+                     <label class="btn btn-primary inputfile">
+                         <span>Browse Image</span>
+                         <input  type="file" multiple (change)="fileChange(input)"  #input />
+
+                     </label>
+                  </div>
+                  <div class="panel-body">
+                      <div class="col-md-3 col-sm-4 col-xs-6" *ngFor="let file_src of file_srcs">
+                          <div class="thumbnail">
+                            <img class="img-responsive" [attr.src]='file_src' alt=""/>
+                          </div>
+                      </div>
+                  </div>
+      </div>
+    </div>
+</div>
